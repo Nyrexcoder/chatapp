@@ -8,7 +8,7 @@
 
     ],
   "rewrites": [
-            { "source": "/socket.io", "destination": "https://chatapp-nyrexcoder.vercel.app/socket.io" },
+            { "source": "/socket.io", "destination": "http://localhost:3000/socket.io" },
             { "source": "/(.*)", "destination": "/" }
               ]
 }
