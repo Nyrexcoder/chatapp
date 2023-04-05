@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const http = require('http').createServer(app)
-
+const io = require('socket.io')(http);
 const PORT = process.env.PORT || 3000
 
 http.listen(PORT, () => {
@@ -15,10 +15,11 @@ app.get('/', (req, res) => {
 })
 
 // Socket 
-const io = require('socket.io')(http)
-
 io.on('connection', (socket) => {
     console.log('Connected...')
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
     socket.on('message', (msg) => {
         socket.broadcast.emit('message', msg)
     })
