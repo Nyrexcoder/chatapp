@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nyrex chat app</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="chat__section">
+        <div class="brand">
+            <img height="40" src="logo.jpg" alt="logo">
+            <h1><font color="#fd509b">nyrex</font>Chat</h1>
+            &nbsp;
+            <span style="text-align: center;">(Freely chat with any one)</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <span class="typing" style="color: green;"></span>
+            <small>developed by <a href="https://nyrex-frontend-nyrexcoder.vercel.app/">nyrexDeveloper</a></small>
+        </div>
+        <div class="message__area"></div>
+        <div class="message_container">
+            <textarea autofocus id="textarea" cols="30" rows="1" placeholder="Write a message..."></textarea>
+            <button id="sandBtn" onclick="myFunction()"><i class="fa fa-location-arrow"></i></button>
+        </div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+</body>
+
+</html>
