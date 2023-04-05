@@ -1,14 +1,19 @@
 {
-      "version": 2,
-    "builds": [
-       {
-        "src": "index.js",
-        "use": "@now/node"
-       }
-
-    ],
-  "rewrites": [
-            { "source": "/socket.io", "destination": "http://localhost:3000/socket.io" },
-            { "source": "/(.*)", "destination": "/" }
-              ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/socket.io",
+      "dest": "http://localhost:3000/socket.io"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "http://localhost:3000/$1"
+    }
+  ]
 }
