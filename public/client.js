@@ -8,6 +8,10 @@ do {
 } while (!name);
 
 textarea.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    sendMessage(textarea.value);
+  }
+  
     let data = {
         user: name,
       };
